@@ -98,8 +98,7 @@ if __name__ == "__main__":
     args=parser.parse_args()
     
     # extracts shortcode from url and (potential) suffix share bloat
-    args.input_link = re.match(r'https://www.instagram.com/p/([A-Za-z0-9]+)/?(.*)', args.input_link).group(1)
-
+    args.input_link = re.match(r'https://www.instagram.com/p/([-A-Za-z0-9]+)/?(.*)', args.input_link).group(1)
     if not args.c and not args.i:
         args.c = True
         args.i = True
